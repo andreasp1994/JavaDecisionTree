@@ -1,5 +1,6 @@
 package test;
 
+import decisiontree.LeafNode;
 import entropy.Entropy;
 import ft.JointFrequencyTable;
 import ft.FrequencyTable;
@@ -29,6 +30,10 @@ public class Test {
 //		} catch (NoSuchValueException e){
 //			System.out.println(e.getMessage());
 //		}
+		
+		//LeafNodeTest
+		LeafNode<String> a = new LeafNode<String>("Test");
+		
 	}
 	
 }

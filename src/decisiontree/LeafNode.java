@@ -1,14 +1,25 @@
 package decisiontree;
 
-public class LeafNode<T> extends Node<T> {
+public class LeafNode<T> extends Node {
 	
 	private static int LEAFNODE_COUNT = 0;
-	private String class_attribute;
+	private T value;
 	
 	public LeafNode(){ this("UnnamedLeafNode" + LeafNode.LEAFNODE_COUNT);}
 	
-	public LeafNode(String class_atr){ this.class_attribute = class_atr; }
+	public LeafNode(String attr){ this(attr,null); }
 	
+	public LeafNode(String attr, T value){
+		super(attr);
+		this.value = value;
+		LeafNode.LEAFNODE_COUNT++;
+	}
 	
+	public T getValue(){
+		return this.value;
+	}
 	
+	public void setValue(T value){
+		this.value = value;
+	}
 }

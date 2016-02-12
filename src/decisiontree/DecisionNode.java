@@ -7,14 +7,11 @@ import java.util.Set;
 /**
  * Decision Node Class:
  * 
- * The class extends a string type node since in this decision tree
- * implementation the decision node will always contain the name of
- * the attribute.
  * @author Antreas Pogiatzis
  *
  * @param <T> Type of decision node's attribute values 
  */
-public class DecisionNode<T> extends Node<String> {
+public class DecisionNode<T> extends Node {
 
 	//each branch has a value and leads to a node. 
 	private Map<T, Node> branches = new HashMap<T, Node>();
@@ -33,12 +30,11 @@ public class DecisionNode<T> extends Node<String> {
 	/**
 	 * Adds a new branch to the node.
 	 * Each branch has a value and and a node which leads to.
-	 * @param <E> Type of the node (String if DecisionNode)
 	 * @param value Value of the branch
 	 * @param next	Node which the branch is connected to.
 	 * @throws BranchAlreadyExistsException
 	 */
-	public <E> void addBranch(T value, Node<E> next) throws BranchAlreadyExistsException{
+	public void addBranch(T value, Node next) throws BranchAlreadyExistsException{
 		if (branches.containsKey(value)) throw new BranchAlreadyExistsException("This branch already exists!");
 		branches.put(value, next);
 	}
@@ -75,7 +71,7 @@ public class DecisionNode<T> extends Node<String> {
 	 * @param node	New children node
 	 * @throws BranchDoesNotExistException
 	 */
-	public <E> void setBranchNode(T value, Node<E> node) throws BranchDoesNotExistException{
+	public void setBranchNode(T value, Node node) throws BranchDoesNotExistException{
 		if(!branches.containsKey(value)) throw new BranchDoesNotExistException("Can't change node of branch which does not exist.");
 		branches.put(value, node);
 	}

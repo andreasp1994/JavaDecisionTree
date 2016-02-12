@@ -1,8 +1,8 @@
 package decisiontree;
 
-public abstract class Node<T> {
+public abstract class Node {
 	
-	private T element; //generic type element of the node
+	private String attribute; 
 	
 	/**
 	 * Default constructor
@@ -10,20 +10,20 @@ public abstract class Node<T> {
 	public Node(){ this(null); }
 	
 	/**
-	 * Creates a node which contains the specified element.
-	 * @param element
+	 * Creates a node which represents the specified attribute.
+	 * @param attribute
 	 */
-	public Node(T element){this.element = element;}
+	public Node(String attr){this.attribute = attr;}
 	
 	/**
-	 * Returns the element contained in the node.
-	 * @return element
+	 * Returns the attribute associated with the node.
+	 * @return attribute string
 	 */
-	public T getElement(){ return this.element;}
+	public String getAttribute(){ return this.attribute;}
 	
 	/**
-	 * Sets the element contained in the node.
-	 * @param element
+	 * Sets the attribute associated with the node.
+	 * @param attribute
 	 */
-	public void setElement(T element) { this.element = element; }
+	public void setAttribute(String attr) { this.attribute = attr; }
 }
