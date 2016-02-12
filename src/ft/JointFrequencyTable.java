@@ -1,10 +1,15 @@
 /***********************************************************
- * Joint Frqequency Table Java Implementation ( 2 Attributes )
+ * Joint Frequency Table Java Implementation ( 2 Attributes )
  * Author: Antreas Pogiatzis
  * 
  * Description:
- * This 
+ * This joint frequency table stores the frequency of the 
+ * combination of different values of attributes that occurred
+ * in a data set.
+ * Developed to generate a decision tree using the
+ * ID3 algorithm as described here:
  * 
+ * http://www.saedsayad.com/decision_tree.htm
  * 
  ***********************************************************/
 package ft;
@@ -48,7 +53,7 @@ public class JointFrequencyTable<T> {
 	}
 
 	/**
-	 * 
+	 * NOT FINISHED!!
 	 * @return
 	 */
 	@Override

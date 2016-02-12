@@ -11,8 +11,6 @@
  * 
  * http://www.saedsayad.com/decision_tree.htm
  * 
- * 
- * Email: pogiatzis.c.a@gmail.com
  ***********************************************************/
 package ft;
 
