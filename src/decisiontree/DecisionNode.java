@@ -80,4 +80,15 @@ public class DecisionNode<T> extends Node<String> {
 		branches.put(value, node);
 	}
 	
+	/**
+	 * Returns the children node of the specified branch
+	 * @param value Value of the branch
+	 * @return	Children node.
+	 * @throws BranchDoesNotExistException
+	 */
+	public Node getBranchNode(T value) throws BranchDoesNotExistException{
+		if(!branches.containsKey(value)) throw new BranchDoesNotExistException("Can't get node of a branch which does not exist");
+		return branches.get(value);
+	}
+	
 }
