@@ -37,6 +37,7 @@ public class DecisionNode<T> extends Node {
 	public void addBranch(T value, Node next) throws BranchAlreadyExistsException{
 		if (branches.containsKey(value)) throw new BranchAlreadyExistsException("This branch already exists!");
 		branches.put(value, next);
+		
 	}
 	
 	/**

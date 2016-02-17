@@ -1,10 +1,10 @@
 package test;
 
+import decisiontree.DecisionTree;
 import decisiontree.LeafNode;
 import entropy.Entropy;
-import ft.JointFrequencyTable;
 import ft.FrequencyTable;
-import ft.NoSuchValueException;
+import ft.JointFrequencyTable;
 
 public class Test {
 
@@ -33,6 +33,10 @@ public class Test {
 		
 		//LeafNodeTest
 		LeafNode<String> a = new LeafNode<String>("Test");
+		
+		//DecisionTree test
+		DecisionTree dt = new DecisionTree();
+		dt.addAttribute("PlayGolf", testInput);
 		
 	}
 	
