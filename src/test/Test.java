@@ -5,6 +5,7 @@ import decisiontree.LeafNode;
 import entropy.Entropy;
 import ft.FrequencyTable;
 import ft.JointFrequencyTable;
+import informationgain.InformationGain;
 
 public class Test {
 
@@ -20,7 +21,7 @@ public class Test {
 		
 		
 		
-		JointFrequencyTable<String> myDFT = new JointFrequencyTable<String>("PlayGolf","Weather",testInput,testInput2);
+		JointFrequencyTable<String> myDFT = new JointFrequencyTable<String>("PlayGolf","Outlook",testInput,testInput2);
 		//System.out.println(myDFT.getProbabilityByValue("Yes","Sunny"));
 		
 		System.out.println(Entropy.calculate(myDFT));
@@ -30,6 +31,8 @@ public class Test {
 //		} catch (NoSuchValueException e){
 //			System.out.println(e.getMessage());
 //		}
+		//Entropy Test
+		System.out.println("Joint entropy:" + Entropy.calculate("PlayGolf",testInput,"Outlook",testInput2));
 		
 		//LeafNodeTest
 		LeafNode<String> a = new LeafNode<String>("Test");
@@ -37,6 +40,15 @@ public class Test {
 		//DecisionTree test
 		DecisionTree dt = new DecisionTree();
 		dt.addAttribute("PlayGolf", testInput);
+		
+		//Information Gain Test:
+		System.out.println("Information Gain PlayGolf-Outlook:"+InformationGain.calculate("PlayGolf",myDFT ));
+		
+		//FrequencyTable Test:
+		//Why generic type array cannot be casted to String???
+		for ( Object s : myFT.generateValuesArray()){
+			System.out.println("Generates values:" + s);
+		}
 		
 	}
 	

@@ -88,4 +88,13 @@ public class DecisionNode<T> extends Node {
 		return branches.get(value);
 	}
 	
+	/**
+	 * Returns true if the node is a leaf node.
+	 * (Has no branches)
+	 * @return True if is leaf, false otherwise.
+	 */
+	public boolean isLeaf(){
+		return branches.isEmpty();
+	}
+	
 }

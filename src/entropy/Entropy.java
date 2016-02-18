@@ -14,6 +14,21 @@ public final class Entropy {
 	private  Entropy(){}
 	
 	/**
+	 * Calculates the entropy of an attribute by constructing
+	 * a frequency table given the values of the attribute.
+	 * @param attr
+	 * @param values
+	 * @return double variable containing Entropy value
+	 */
+	public static <T> double calculate(String attr, T[] values){
+		return  Entropy.calculate(new FrequencyTable<T>(attr, values));
+	}
+	
+	public static <T> double calculate(String attr1, T[] values1, String attr2, T[] values2){
+		return Entropy.calculate(new JointFrequencyTable<T>(attr1,attr2,values1,values2)); //Why the hell did i put the parameters in that order..? whatever...
+	}
+	
+	/**
 	 * Calculates entropy value given the frequency table of 1 attribute.
 	 * @param ft1 Attribute's frequency table.
 	 * @return double variable containing the entropy value.

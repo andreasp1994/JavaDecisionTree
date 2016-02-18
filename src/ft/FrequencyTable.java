@@ -126,6 +126,37 @@ public class FrequencyTable<T> {
 	public int getValueDomainSize(){ return valueCounter; }
 	
 	/**
+	 * 
+	 * @return
+	 */
+	public T[] generateValuesArray(){
+		@SuppressWarnings("unchecked")
+		T[] values = (T[]) new Object[this.totalElements];
+		int cursor = 0;
+		for( T value : this.getValueDomain()){
+			for (int i = cursor;i<cursor+this.getValueCount(value);i++){
+				values[i] = value;
+			}
+			cursor += this.getValueCount(value);
+		}
+		return values;
+	}
+	
+	/**
+	 * Returns the title of the frequency table
+	 * i.e The name of the attribute
+	 * @return title of table
+	 */
+	public String getTitle() { return this.title; }
+	
+	/**
+	 * Sets the title of the frequency table
+	 * Better to use the name of the attribute here
+	 * @param title
+	 */
+	public void setTitle(String title) { this.title = title; }
+	
+	/**
 	 * Creates and returns a string representation of the frequency
 	 * table.
 	 */
@@ -140,6 +171,4 @@ public class FrequencyTable<T> {
 		out.append("Total\t" + this.totalElements);
 		return out.toString();
 	}
-	
-	
 }

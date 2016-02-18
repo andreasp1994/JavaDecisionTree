@@ -11,6 +11,9 @@
  * 
  * http://www.saedsayad.com/decision_tree.htm
  * 
+ * NOTE: 2 Attributes' values should be of the same type!
+ * 		 Support for different types may be implemented at
+ * 		 stage!
  ***********************************************************/
 package ft;
 
@@ -40,6 +43,7 @@ public class JointFrequencyTable<T> {
 		ft2 = new FrequencyTable<T>(title2,in2);
 		mapper1 = classft1.getMapper();
 		mapper2 = ft2.getMapper();
+		
 		frequencies =  new int[classft1.getValueDomainSize()][ft2.getValueDomainSize()];
 		
 		//Complete frequency table by utilizing the mapper
@@ -107,6 +111,11 @@ public class JointFrequencyTable<T> {
 			i++;
 		}
 		return array;
+	}
+	
+	public FrequencyTable<T> getFrequencyTable(String attr){
+		if (classft1.getTitle().equals(attr)) return classft1;
+		else return ft2;
 	}
 	
 	public T[] getColumns(){
